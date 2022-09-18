@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -7,8 +8,8 @@ import {
   Text,
   useColorScheme,
   View,
+  TouchableOpacity,
 } from "react-native";
-
 import {
   Colors,
   DebugInstructions,
@@ -16,99 +17,36 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Practice from "./Components/Practice";
-
-const Section = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === "dark";
-  return (
-    // <View style={styles.sectionContainer}>
-    //   <Text
-    //     style={[
-    //       styles.sectionTitle,
-    //       {
-    //         color: isDarkMode ? Colors.white : Colors.black,
-    //       },
-    //     ]}
-    //   >
-    //     {title}
-    //   </Text>
-    //   <Text
-    //     style={[
-    //       styles.sectionDescription,
-    //       {
-    //         color: isDarkMode ? Colors.light : Colors.dark,
-    //       },
-    //     ]}
-    //   >
-    //     {children}
-    //   </Text>
-    // </View>
-    <View>
-      <Text>Hello World</Text>
-    </View>
-  );
-};
+import Practice2 from "./Components/Practice2";
+import Practice3 from "./Components/Practice3";
+import Practice4 from "./Components/Practice4";
+import Practice5 from "./Components/Pratice5";
 
 const App = () => {
   const isDarkMode = useColorScheme() === "dark";
-
+  const Stack = createNativeStackNavigator();
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
   const data = "Some Data";
 
   return (
-    // <SafeAreaView style={backgroundStyle}>
-    //   <StatusBar
-    //     barStyle={isDarkMode ? "light-content" : "dark-content"}
-    //     backgroundColor={backgroundStyle.backgroundColor}
-    //   />
-    //   <ScrollView
-    //     contentInsetAdjustmentBehavior="automatic"
-    //     style={backgroundStyle}
-    //   >
-    //     <Header />
-    //     <View
-    //       style={{
-    //         backgroundColor: isDarkMode ? Colors.black : Colors.white,
-    //       }}
-    //     >
-    //       <Section title="Step One">
-    //         Edit <Text style={styles.highlight}>App.js</Text> to change this
-    //         screen and then come back to see your edits.
-    //       </Section>
-    //       <Section title="See Your Changes">
-    //         <ReloadInstructions />
-    //       </Section>
-    //       <Section title="Debug">
-    //         <DebugInstructions />
-    //       </Section>
-    //       <Section title="Learn More">
-    //         Read the docs to discover what to do next:
-    //       </Section>
-    //       <LearnMoreLinks />
-    //     </View>
-    //   </ScrollView>
-    // </SafeAreaView>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name="Practice2" component={Practice2} />
+    //     <Stack.Screen name="Practice3" component={Practice3} />
+    //     <Stack.Screen name="Practice" component={Practice} />
+    //     <Stack.Screen name="Practice4" component={Practice4} />
+    //     <Stack.Screen name="Practice5" component={Practice5} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+
     <View>
-      {/* <Text>Hello React Native</Text> */}
       <Practice data={data} />
     </View>
-
-    // <View style={{ flex: 1 }}>
-    // <ScrollView>
-    //   <View style={{ flex: 2, backgroundColor: "#0096FF" }}></View>
-    //   <View style={{ flex: 1, backgroundColor: "#6495ED" }}></View>
-
-    //   <View style={{ flex: 3, backgroundColor: "#5D3FD3" }}></View>
-
-    //   <View style={{ flex: 2, backgroundColor: "#0096FF" }}></View>
-    //   <View style={{ flex: 1, backgroundColor: "#6495ED" }}></View>
-
-    //   <View style={{ flex: 3, backgroundColor: "#5D3FD3" }}></View>
-    //</ScrollView> //
-    // </View>
   );
 };
 
@@ -132,3 +70,37 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+// <SafeAreaView style={backgroundStyle}>
+//   <StatusBar
+//     barStyle={isDarkMode ? "light-content" : "dark-content"}
+//     backgroundColor={backgroundStyle.backgroundColor}
+//   />
+//   <ScrollView
+//     contentInsetAdjustmentBehavior="automatic"
+//     style={backgroundStyle}
+//   >
+//     <Header />
+//     <View
+//       style={{
+//         backgroundColor: isDarkMode ? Colors.black : Colors.white,
+//       }}
+//     >
+//       <Section title="Step One">
+//         Edit <Text style={styles.highlight}>App.js</Text> to change this
+//         screen and then come back to see your edits.
+//       </Section>
+//       <Section title="See Your Changes">
+//         <ReloadInstructions />
+//       </Section>
+//       <Section title="Debug">
+//         <DebugInstructions />
+//       </Section>
+//       <Section title="Learn More">
+//         Read the docs to discover what to do next:
+//       </Section>
+//       <LearnMoreLinks />
+//     </View>
+//   </ScrollView>
+// </SafeAreaView>
+// <View>
